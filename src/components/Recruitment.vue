@@ -9,8 +9,9 @@
   #conbox
     .content(v-for="pec in pecdata")
         .zitem
-            h3 {{ pec.Title }}
-        p(v-for="px in pec.Content.split('\\n')") {{ px }}
+            h3 产品经理
+<!--            h3 {{ pec.Title }}-->
+<!--        p(v-for="px in pec.Content.split('\\n')") {{ px }}-->
 </template>
 <script>
 import axios from "../router/http";

@@ -2,17 +2,18 @@
 #app
     el-menu(:default-active="$route.path" style="min-width:1320px;" ,class="el-menu-demo",mode="horizontal",active-text-color="#409eff",v-bind:class="{ toppost : $route.path == '/' }" router)
         el-menu-item(index="",style="padding-left: 3%")
-            img(src="static/toplogo.png",style="width: 280px")
+            // img(src="static/emitLoge.png",style="width: 280px")
+            div.logo Emit 丨 经数
         el-menu-item(index="/",style="margin-left:23%") 首页
-        el-menu-item(index="/news") 新闻资讯
-        el-menu-item(index="/product") 产品中心
-        el-menu-item(index="/anli") 经典案例
-        el-menu-item(index="/goto") 走进科建
+        // el-menu-item(index="/news") 新闻资讯
+        // el-menu-item(index="/product") 产品中心
+        // el-menu-item(index="/anli") 经典案例
+        el-menu-item(index="/goto") 走进经数
         //- el-menu-item(index="/help") 帮助中心
-        //- el-menu-item(index="/recruitment") 诚聘英才
-        //- el-menu-item(index="/about") 联系我们
+        el-menu-item(index="/recruitment") 诚聘英才
+        el-menu-item(index="/about") 联系我们
         //- el-menu-item(index="/study") 学习模块
-        el-menu-item(index="/appDownload") 下载APP
+        // el-menu-item(index="/appDownload") 下载APP
     transition(enter-active-class="animated")
         router-view
     .bottombox(v-if="$route.path != '/' && $route.path.substring(0,6) != '/admin'")
@@ -20,7 +21,7 @@
             li(v-for="item in hrefs")
                 router-link(:to="item.href == null ? '#' : item.href") {{ item.text }}
         img.bottomercode(src="../static/ercode.png")
-      div.copyright 科建版权所有
+      div.copyright 上海经数科技有限公司版权所有
 </template>
 
 <script>
@@ -37,7 +38,7 @@ export default {
                 [
                     {
                         href: "/goto",
-                        text: "走进科建"
+                        text: "走进经数"
                     },
                     {
                         href: "/goto",
@@ -46,10 +47,6 @@ export default {
                     {
                         href: "/goto",
                         text: "企业文化"
-                    },
-                    {
-                        href: "/goto",
-                        text: "资质荣誉"
                     },
                     {
                         href: "/goto",
@@ -103,19 +100,19 @@ export default {
                 [
                     {
                         href: '/about',
-                        text: ""
+                        text: "联系我们"
                     },
                     {
                         href: null,
-                        text: ""
+                        text: "邮箱:www.emit@163.com"
                     },
                     {
                         href: null,
-                        text: ""
+                        text: "电话:18721522486"
                     },
                     {
                         href: null,
-                        text: ""
+                        text: "地址:上海市杨浦区纪念路8号5号楼103B室"
                     }
                 ]
             ]
@@ -129,10 +126,10 @@ export default {
                 }
             })
             .then(response => {
-                this.hrefdata[5][0].text = "联系我们"
-                this.hrefdata[5][1].text = "邮箱：" + response.data[0].Content
-                this.hrefdata[5][2].text = "电话：" + response.data[1].Content
-                this.hrefdata[5][3].text = "地址：" + response.data[2].Content
+                // this.hrefdata[5][0].text = "联系我们"
+                // this.hrefdata[5][1].text = "邮箱：" + response.data[0].Content
+                // this.hrefdata[5][2].text = "电话：" + response.data[1].Content
+                // this.hrefdata[5][3].text = "地址：" + response.data[2].Content
                 this.appurl = response.data[3].Content
             })
 
@@ -324,6 +321,10 @@ a {
   color: #fff;
   text-align: center;
   padding: 10px 0;
+}
+.logo{
+  width: 400px;
+
 }
 </style>
 

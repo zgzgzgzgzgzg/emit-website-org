@@ -1,7 +1,7 @@
 <template lang="jade">
 #goto
     .pagetop(style="background-image: url(./static/gotokejiantop.jpg)")
-        h1 {{ pagetitle }}
+        h1 走进经数
     #conbox
         .jianjie
             h1 公司简介
@@ -14,47 +14,57 @@
                 .colorbox
         .zaifenge
             i.el-icon-arrow-down
-        el-row.fazhan
-            el-col(:span='3')
-                img(src='../../static/lc_l.png',style="width: 100%")
-            el-col.fazhancon(:span='18')
-                h1.ani-view.fade-in-up 发展历程
-                h2.ani-view.fade-in-box DEVELOPMENT
-                .hrstyle.ani-view.fade-in-down
-                div
-                  div.fishBoneDiv
-            el-col(:span='3')
-                img(src='../../static/lc_r.png',style="width: 100%")
         .wenhua 
             h1.ani-view.fade-in-box 企业文化
             h2.ani-view.fade-in-box CULTURE
-            h1.ani-view.fade-in-box(style="margin-bottom:20px;") 我们只专注一件事情——工程项目管理
-            h3.ani-view.fade-in-right 确保工程无重大安全事故
-            h3.ani-view.fade-in-right 确保工程施工单位无大面积返工
-            h3.ani-view.fade-in-right 确保工程材料及设备无伪劣产品
-            h3.ani-view.fade-in-right 确保工程管理留下痕迹、实施过程可追溯
-        .rongyu
-            el-dialog(:title="dialogTitle",width="50%",style="",:visible.sync="dialogVisible")
-                img(v-bind:src="dialogUrl",style="width:80%")
-            h1.ani-view.fade-in-up 公司荣誉
-            h2.ani-view.fade-in-down HONOR
-            el-row.ani-view.fade-in-up(:gutter="20",style="width: 80%;margin: 0 auto;")
-                el-col(v-for="item in honorimgs",:key="item.Id",:span="8")
-                    img(v-bind:src="imgserver + item.Img",style="width:100%;margin-bottom: 20px;",@click="dialogVisible = true;dialogUrl = imgserver + item.Img;dialogTitle= item.Remark")
-            h2(style="margin: 0;font-size: 16px;") 点击查看大图
-        .tuandui
-            h1.ani-view.fade-in-up 团队风采
-            h2.ani-view.fade-in-down TEAM
-            el-carousel(:interval="2000",type="card",height="400px")
-                el-carousel-item(v-for="item in fencaiimgs",:key="item.Id")
-                    img(v-bind:src="imgserver + item.Img",style="width:100%")
+            h1.ani-view.fade-in-box(style="margin-bottom:20px;") 我们只专注一件事情
+            h3.ani-view.fade-in-right 坚持服务品质
+            h3.ani-view.fade-in-right 提供全方面数据挖掘
+            h3.ani-view.fade-in-right 提供数据分析的增值IT解决方案
+            h3.ani-view.fade-in-right 专注中国及全球银行的金融领域机构提供服务
+        // .rongyu
+        //     el-dialog(:title="dialogTitle",width="50%",style="",:visible.sync="dialogVisible")
+        //         img(v-bind:src="dialogUrl",style="width:80%")
+        //     h1.ani-view.fade-in-up 公司荣誉
+        //     h2.ani-view.fade-in-down HONOR
+        //     el-row.ani-view.fade-in-up(:gutter="20",style="width: 80%;margin: 0 auto;")
+        //         el-col(v-for="item in honorimgs",:key="item.Id",:span="8")
+        //             img(v-bind:src="imgserver + item.Img",style="width:100%;margin-bottom: 20px;",@click="dialogVisible = true;dialogUrl = imgserver + item.Img;dialogTitle= item.Remark")
+        //     h2(style="margin: 0;font-size: 16px;") 点击查看大图
+        // .tuandui
+        //     h1.ani-view.fade-in-up 团队风采
+        //     h2.ani-view.fade-in-down TEAM
+        //     el-carousel(:interval="2000",type="card",height="400px")
+        //         el-carousel-item(v-for="item in fencaiimgs",:key="item.Id")
+        //             img(v-bind:src="imgserver + item.Img",style="width:100%")
         .hezuo
             h1.ani-view.fade-in-up 合作伙伴
             h2.ani-view.fade-in-down RARTNERS
             el-row.ani-view.fade-in-up(:gutter="60")
-                el-col(:span='4',v-for="item in enterprises",:key="item.Id")
-                    img(:src="imgserver + item.Img",style="width:100%;border: solid 1px #c2daeb;")
-                    p(style="margin: 0;") {{ item.Remark }}
+                el-col(:span='4')
+                    img(src="../../static/partner/clps.png",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
+                el-col(:span='4')
+                    img(src="",style="width: 100%")
 </template>
 <script>
 import '../../static/js/jquery-1.8.3.min'
@@ -65,8 +75,8 @@ export default {
     data () {
         return {
             showlang: true,
-            jianjiecn: '',
-            jianjieen: '',
+            jianjiecn: '上海经数科技有限公司是一家金融业务模型与建模分析服务提供商，为客户提供全方位数据挖掘与数据分析的增值IT解决方案。经数的主要产品包括：智能投顾系统、风险预警系统、信用卡决策核心系统等。',
+            jianjieen: 'Shanghai EMIT Technology Co., Ltd. is a financial business model and modeling analysis service provider, providing customers with value-added IT solutions for comprehensive data mining and data analysis. The main products of the number include: intelligent investment system, risk warning system, credit card decision core system.',
             dialogVisible: false,
             dialogUrl: '',
             dialogTitle: '',
@@ -74,7 +84,7 @@ export default {
             fencaiimgs: [],
             honorimgs: [],
             enterprises: [{
-                Img: '',
+                Img: '../../static/partner/clps.png',
                 Remark: ''
             }, {
                 Img: '',
@@ -128,10 +138,10 @@ export default {
                     this.fencaiimgs = a.data;
                     this.honorimgs = b.data;
                     $(".fishBoneDiv").fishBone(c.data);
-                    this.enterprises = e.data;
+                    // this.enterprises = e.data;
                     this.pagetitle = d.data[0].Content;
-                    this.jianjiecn = d.data[1].Content;
-                    this.jianjieen = d.data[2].Content;
+                    // this.jianjiecn = d.data[1].Content;
+                    // this.jianjieen = d.data[2].Content;
 
 
                     for (let i = this.enterprises.length; i < 9; i++) {

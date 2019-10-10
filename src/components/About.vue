@@ -27,10 +27,10 @@
       el-col(:span="14",:offset="1")
         img.aboutimg(src="../../static/address.jpg",style="width:95%")
       el-col(:span="8")
-        p 企业：上海科建工程管理股份有限公司
-        p 邮箱：{{ emali }}
-        p 电话：{{ phone }}
-        p 地址：{{ address }}
+        p 企业：上海经数科技有限公司
+        p 邮箱：www.emit@163.com
+        p 电话：18721522486
+        p 地址：上海市杨浦区纪念路8号5号楼103B室
 </template>
 <script>
 import axios from "../router/http";
